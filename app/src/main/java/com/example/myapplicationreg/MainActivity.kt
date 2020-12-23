@@ -1,5 +1,6 @@
 package com.example.myapplicationreg
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -14,7 +15,8 @@ class MainActivity : AppCompatActivity() {
         var inputLogin = findViewById<EditText>(R.id.editTextTextPersonName2)
         findViewById<Button>(R.id.button).setOnClickListener(){
             if(login == inputLogin.text.toString()){
-
+                val intent = Intent(this, MainActivity2::class.java)
+                startActivity(intent)
             }
             else{
                 Toast.makeText(this, "Неправильный логин", Toast.LENGTH_SHORT).show()
